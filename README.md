@@ -1,0 +1,3 @@
+# golang-workshop
+
+coursera exercises
