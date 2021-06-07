@@ -1,3 +1,3 @@
-# golang-workshop
+# golang-coursera-workshop
 
 coursera exercises
