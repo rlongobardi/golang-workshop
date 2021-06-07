@@ -1,1 +1,1 @@
-# golang-workshop
+# golang-coursera-soluttions
