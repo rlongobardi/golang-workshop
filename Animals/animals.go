@@ -84,7 +84,7 @@ func main() {
 }
 
 func enquireAnimals(reader *bufio.Reader, animal Animal) {
-	fmt.Println("Please enter animal name and a command for the animal(eat/speak/move), only two words separate by single space!")
+	fmt.Print(">")
 	animalName, command := getAnimalNameAndAnimalCommand(reader)
 	name := strings.ToLower(animalName)
 	switch {
@@ -106,12 +106,12 @@ func animalObeyCommand(command string, animal Animal) {
 	cmd := strings.ToLower(command)
 	if cmd == "move" {
 		animal.Move()
-	}
-	if cmd == "speak" {
+	} else if cmd == "speak" {
 		animal.Speak()
-	}
-	if cmd == "eat" {
+	} else if cmd == "eat" {
 		animal.Eat()
+	} else {
+		fmt.Println("Animal command don't recognized!!")
 	}
 }
 
@@ -125,7 +125,7 @@ func getAnimalNameAndAnimalCommand(reader *bufio.Reader) (string, string) {
 		log.Fatal("Error, too many words! Try again with only two animal name and command Move/Eat/Speak")
 	}
 	name, cmd := text[0], text[1]
-	fmt.Printf("animal name=%s and as command=%s \n", name, cmd)
+	//fmt.Printf("animal name=%s and as command=%s \n", name, cmd)
 
 	return name, cmd
 }
